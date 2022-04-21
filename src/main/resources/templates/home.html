@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>홈 화면</h2>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg" type="button" th:onclick="|location.href='@{/user/addUser}'|">
+                회원 가입
+            </button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-dark btn-lg"
+                    onclick="location.href='items.html'"
+                    th:onclick="|location.href='@{/user/login}'|" type="button">
+                로그인
+            </button>
+        </div>
+    </div>
+    <hr class="my-4">
+    <button class="w-100 btn btn-primary btn-lg" type="button" th:onclick="|location.href='@{/ad/addAd}'|">
+        광고 신청
+    </button>
+    <hr class="my-4">
+
+    <h3> 공지사항 </h3>
+    <button class="w-2 btn btn-primary btn-lg" type="button" th:onclick="|location.href='@{/notice/addNotice}'|">
+        공지사항 추가
+    </button>
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>제목</th>
+                <th>날짜</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="notice : ${notices}">
+                <td><a href="item.html" th:href="@{/}" th:text="${notice.id}">No</a></td>
+                <td><a href="item.html" th:href="@{/}" th:text="${notice.title}">제목</a></td>
+                <td th:text="${notice.createdAt}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr class="my-4">
+</div> <!-- /container -->
+</body>
+
+
+</html>
