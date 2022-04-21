@@ -51,7 +51,7 @@ public class UserController {
         session.setAttribute(SessionConst.LOGIN_USER, loginUser);
 
         log.info("login Success");
-        return "redirect:/user/adminHome";
+        return "redirect:/";
     }
 
     @GetMapping("/addUser")
@@ -72,5 +72,15 @@ public class UserController {
     @GetMapping("/adminHome")
     public String adminHome(){
         return "user/adminHome";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        if(session != null){
+            session.invalidate();
+        }
+
+        return "redirect:/user/login";
     }
 }

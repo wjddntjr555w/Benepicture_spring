@@ -15,6 +15,7 @@ import java.util.*;
 * */
 
 @Slf4j
+@Repository
 public class UserRepository implements UserRepositoryInterface {
 
     private final JdbcTemplate template;

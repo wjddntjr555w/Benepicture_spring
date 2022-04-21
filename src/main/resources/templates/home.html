@@ -45,7 +45,7 @@
             </thead>
             <tbody>
             <tr th:each="notice : ${notices}">
-                <td><a href="item.html" th:href="@{/}" th:text="${notice.id}">No</a></td>
+                <td><a href="item.html" th:href="@{/}" th:text="${notice.noticeId}">No</a></td>
                 <td><a href="item.html" th:href="@{/}" th:text="${notice.title}">제목</a></td>
                 <td th:text="${notice.createdAt}"></td>
             </tr>
