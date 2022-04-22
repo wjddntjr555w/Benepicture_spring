@@ -81,6 +81,6 @@ public class UserController {
             session.invalidate();
         }
 
-        return "redirect:/user/login";
+        return "redirect:/";
     }
 }

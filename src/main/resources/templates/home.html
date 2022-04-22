@@ -10,20 +10,40 @@
     <div class="py-5 text-center">
         <h2>홈 화면</h2>
     </div>
-    <div class="row">
-        <div class="col">
-            <button class="w-100 btn btn-secondary btn-lg" type="button" th:onclick="|location.href='@{/user/addUser}'|">
-                회원 가입
-            </button>
+    <span th:if="${session.loginUser == null}">
+        <div class="row">
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg" type="button" th:onclick="|location.href='@{/user/addUser}'|">
+                    회원 가입
+                </button>
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-dark btn-lg"
+                        onclick="location.href='items.html'"
+                        th:onclick="|location.href='@{/user/login}'|" type="button">
+                    로그인
+                </button>
+            </div>
         </div>
-        <div class="col">
-            <button class="w-100 btn btn-dark btn-lg"
-                    onclick="location.href='items.html'"
-                    th:onclick="|location.href='@{/user/login}'|" type="button">
-                로그인
-            </button>
+    </span>
+    <span th:if="${session.loginUser != null}">
+        <div class="row">
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        onclick="location.href='items.html'"
+                        th:onclick="|location.href='@{/user/adminHome}'|" type="button">
+                    관리자 페이지
+                </button>
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-dark btn-lg"
+                        onclick="location.href='items.html'"
+                        th:onclick="|location.href='@{/user/logout}'|" type="button">
+                    로그아웃
+                </button>
+            </div>
         </div>
-    </div>
+    </span>
     <hr class="my-4">
     <button class="w-100 btn btn-primary btn-lg" type="button" th:onclick="|location.href='@{/ad/addAd}'|">
         광고 신청

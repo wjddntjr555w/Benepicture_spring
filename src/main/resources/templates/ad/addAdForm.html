@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container" style="max-width: 600px">
+    <form method="post" enctype="multipart/form-data" id="ad_form" class="ad_form">
+
+            <div class="py-5 text-center">
+                <h2>광고 문의</h2>
+            </div>
+            <div class="form-group">
+                <label class="radio-indi">
+                    <input type="radio" name="type" id="indi" value="individual" checked> 개인
+                </label>
+                <label class="radio-corp">
+                    <input type="radio" name="type" id="corp" value="corp"> 기업
+                </label>
+            </div>
+            <div class="form-group">
+                <label>성함</label>
+                <input type="text" class="form-control" id="adName" name="adName" aria-describedby="emailHelp" placeholder="성함" required>
+
+                <label>이메일</label>
+                <input type="email" class="form-control" id="adEmail" name="adEmail" aria-describedby="emailHelp" placeholder="이메일" required>
+
+                <label>연락처</label>
+                <input type="text" class="form-control" id="adPhone" name="adPhone" aria-describedby="emailHelp" placeholder="연락처" required>
+
+                <label>설명</label>
+                <textarea class="form-control" id="adDescription" name="adDescription" rows="6" placeholder="자세한 설명을 적어주세요." required></textarea>
+
+                <div>광고 파일 첨부 (사진, 동영상)</div>
+                <input type="file" class="form-control-file ad_file" accept="image/*" name="adImage" aria-describedby="fileHelp">
+                <div id="fileHelp" class="form-text text-muted">광고에 쓰일 이미지, 동영상을 첨부해주세요.</div>
+            </div>
+            <button class="btn btn-info" id="btn_submit" type="submit">광고신청</button>
+            <small id="submitHelp" class="form-text text-muted">광고 문의일로부터 약 3영업일 이내로 처리됩니다.</small>
+    </form>
+</div>
+</body>
+
+</html>
