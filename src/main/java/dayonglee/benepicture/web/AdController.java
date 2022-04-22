@@ -45,6 +45,7 @@ public class AdController {
         int adId = random.nextInt();
         ad.setAdId(adId);
 
+
         String storeFileName = "";
         if(!adImage.isEmpty()){
             String fildDir = "/Users/jeong-useog/Desktop/spring/adImage/"; // 로컬에 파일을 저장하도록 설정
@@ -60,7 +61,7 @@ public class AdController {
 
         adService.save(ad);
 
-        return "/ad/addAdForm";
+        return "redirect:/";
     }
 
     private String createStoreFileName(String originalFileName) {

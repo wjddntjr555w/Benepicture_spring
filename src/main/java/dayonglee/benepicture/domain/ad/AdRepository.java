@@ -1,8 +1,10 @@
 package dayonglee.benepicture.domain.ad;
 
+import dayonglee.benepicture.domain.notice.Notice;
 import dayonglee.benepicture.repository.AdRepositoryInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,28 @@ public class AdRepository implements AdRepositoryInterface {
 
     @Override
     public List<Ad> findAll() {
-        return null;
+        String sql = "select * from ad";
+        List<Ad> ad = template.query(sql, AdMapper());
+
+        return ad;
+    }
+
+    private RowMapper<Ad> AdMapper() {
+        return (rs, rowNum) -> {
+            Ad ad = new Ad();
+            ad.setAdId(rs.getInt("adid"));
+            ad.setAdState(rs.getString("adState"));
+            ad.setAdName(rs.getString("adName"));
+            ad.setAdEmail(rs.getString("adEmail"));
+            ad.setAdPhone(rs.getString("adPhone"));
+            ad.setAdDescription(rs.getString("adDescription"));
+
+            String fileStore = rs.getString("adImageURI");
+            String fildDir = "/Users/jeong-useog/Desktop/spring/adImage/"; // 로컬에 파일을 저장하도록 설정
+            ad.setAdImageURI("file:"+fildDir+fileStore);
+//            ad.setAdImageURI(rs.getString("adImageURI"));
+
+            return ad;
+        };
     }
 }

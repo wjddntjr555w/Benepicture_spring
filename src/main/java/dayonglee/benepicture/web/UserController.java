@@ -2,12 +2,16 @@ package dayonglee.benepicture.web;
 
 
 import dayonglee.benepicture.SessionConst;
+import dayonglee.benepicture.domain.ad.Ad;
+import dayonglee.benepicture.domain.ad.AdRepository;
+import dayonglee.benepicture.domain.notice.NoticeRepository;
 import dayonglee.benepicture.domain.user.User;
 import dayonglee.benepicture.domain.user.UserRepository;
 import dayonglee.benepicture.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -26,6 +31,9 @@ public class UserController {
     private final UserRepository userRepository;
     private final LoginService loginService;
 
+    private final NoticeRepository noticeRepository;
+    private final AdRepository adRepository;
+
     @GetMapping("/login")
     public String loginPage(@ModelAttribute User user){
         log.info("user/login GetMapping");
@@ -34,7 +42,7 @@ public class UserController {
 
     @PostMapping("/login")
     public String login(@ModelAttribute User user, BindingResult bindingResult, HttpServletRequest request){
-        // ModelAttribute로 넘어온 값을 user에 바로 넣어줌
+
         log.info("user ={}",user);
 
         User loginUser = loginService.login(user.getUserId(), user.getUserPassword());
@@ -45,7 +53,7 @@ public class UserController {
             return "user/login";
         }
 
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(true);
         log.info("session ={}",session);
 
         session.setAttribute(SessionConst.LOGIN_USER, loginUser);
@@ -70,7 +78,14 @@ public class UserController {
     }
 
     @GetMapping("/adminHome")
-    public String adminHome(){
+    public String adminHome(Model model) {
+
+        model.addAttribute("notices",noticeRepository.findAll());
+
+        List<Ad> adList = adRepository.findAll();
+        model.addAttribute("ads",adList);
+
+
         return "user/adminHome";
     }
 

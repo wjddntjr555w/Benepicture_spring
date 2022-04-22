@@ -15,14 +15,14 @@
             </div>
             <div class="form-group">
                 <label class="radio-indi">
-                    <input type="radio" name="type" id="indi" value="individual" checked> 개인
+                    <input type="radio" name="adState" id="indi" value="individual" checked> 개인
                 </label>
                 <label class="radio-corp">
-                    <input type="radio" name="type" id="corp" value="corp"> 기업
+                    <input type="radio" name="adState" id="corp" value="corp"> 기업
                 </label>
             </div>
             <div class="form-group">
-                <label>성함</label>
+                <label>광고명</label>
                 <input type="text" class="form-control" id="adName" name="adName" aria-describedby="emailHelp" placeholder="성함" required>
 
                 <label>이메일</label>
@@ -41,6 +41,11 @@
             <button class="btn btn-info" id="btn_submit" type="submit">광고신청</button>
             <small id="submitHelp" class="form-text text-muted">광고 문의일로부터 약 3영업일 이내로 처리됩니다.</small>
     </form>
+    <hr class="my-4">
+    <button class="w-100 btn btn-secondary btn-lg"
+            onclick="location.href='items.html'"
+            th:onclick="|location.href='@{/}'|"
+            type="button">메인 페이지로</button>
 </div>
 </body>
 
