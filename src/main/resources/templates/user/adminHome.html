@@ -45,7 +45,11 @@
             </tr>
             </tbody>
         </table>
-
+        <hr class="my-4">
+        <button class="w-2 btn btn-primary btn-lg" type="button" th:onclick="|location.href='@{/notice/addNotice}'|">
+            공지사항 추가
+        </button>
+        <hr class="my-4">
         <div class="py-5 text-center">
             <h2>광고 목록</h2>
         </div>
@@ -71,6 +75,11 @@
             </tbody>
         </table>
     </div>
+    <hr class="my-4">
+    <button class="w-2 btn btn-primary btn-lg" type="button" th:onclick="|location.href='@{/ad/addAd}'|">
+        광고 신청
+    </button>
+    <hr class="my-4">
 
 </div>
 </body>
