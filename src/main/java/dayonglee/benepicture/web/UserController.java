@@ -48,8 +48,8 @@ public class UserController {
 
         log.info("user ={}",user);
 
-        User loginUser = loginService.login(user.getUserId(), user.getUserPassword());
-//        User loginUser = MyBatisLoginService.login(user.getUserId(), user.getUserPassword());
+//        User loginUser = loginService.login(user.getUserId(), user.getUserPassword());
+        dayonglee.benepicture.model.User loginUser = myBatisLoginService.login(user.getUserId(),user.getUserPassword());
 
         if (loginUser == null){
             bindingResult.reject("loginFail","아이디 또는 비밀번호가 맞지 않습니다.");
