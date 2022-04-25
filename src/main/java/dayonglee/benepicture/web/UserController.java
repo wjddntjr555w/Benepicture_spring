@@ -8,6 +8,7 @@ import dayonglee.benepicture.domain.notice.NoticeRepository;
 import dayonglee.benepicture.domain.user.User;
 import dayonglee.benepicture.domain.user.UserRepository;
 import dayonglee.benepicture.service.LoginService;
+import dayonglee.benepicture.service.MyBatisLoginService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,8 @@ public class UserController {
     private final UserRepository userRepository;
     private final LoginService loginService;
 
+    private final MyBatisLoginService myBatisLoginService;
+
     private final NoticeRepository noticeRepository;
     private final AdRepository adRepository;
 
@@ -46,6 +49,7 @@ public class UserController {
         log.info("user ={}",user);
 
         User loginUser = loginService.login(user.getUserId(), user.getUserPassword());
+//        User loginUser = MyBatisLoginService.login(user.getUserId(), user.getUserPassword());
 
         if (loginUser == null){
             bindingResult.reject("loginFail","아이디 또는 비밀번호가 맞지 않습니다.");

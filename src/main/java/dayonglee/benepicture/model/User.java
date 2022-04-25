@@ -1,7 +1,7 @@
-package dayonglee.benepicture.domain.user;
+package dayonglee.benepicture.model;
 
-
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 public class User {
