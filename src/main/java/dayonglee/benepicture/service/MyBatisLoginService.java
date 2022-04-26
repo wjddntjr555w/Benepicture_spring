@@ -1,7 +1,7 @@
 package dayonglee.benepicture.service;
 
 
-import dayonglee.benepicture.dao.UserMapper;
+import dayonglee.benepicture.repository.UserMapper;
 import dayonglee.benepicture.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

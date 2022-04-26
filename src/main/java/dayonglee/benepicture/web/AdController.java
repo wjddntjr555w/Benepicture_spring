@@ -1,24 +1,16 @@
 package dayonglee.benepicture.web;
 
 
-import dayonglee.benepicture.domain.ad.Ad;
+import dayonglee.benepicture.model.Ad;
 import dayonglee.benepicture.service.AdService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.StreamingHttpOutputMessage;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Enumeration;
 import java.util.Random;
 import java.util.UUID;
 

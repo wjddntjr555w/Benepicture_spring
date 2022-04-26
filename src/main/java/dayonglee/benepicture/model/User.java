@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class User {
 
-    private final String userId;
-    private final String userPassword;
-
+    private Long id;
+    private String userId;
+    private String userName;
+    private String userPassword;
 }

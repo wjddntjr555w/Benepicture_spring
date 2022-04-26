@@ -1,10 +1,9 @@
 package dayonglee.benepicture.domain.notice;
 
-import dayonglee.benepicture.domain.user.User;
+import dayonglee.benepicture.model.Notice;
 import dayonglee.benepicture.repository.NoticeRepositoryInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 

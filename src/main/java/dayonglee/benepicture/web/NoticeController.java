@@ -1,13 +1,12 @@
 package dayonglee.benepicture.web;
 
 
-import dayonglee.benepicture.domain.notice.Notice;
+import dayonglee.benepicture.model.Notice;
 import dayonglee.benepicture.domain.notice.NoticeRepository;
 import dayonglee.benepicture.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,7 +24,6 @@ import java.util.List;
 public class NoticeController {
 
     private final NoticeService noticeService;
-    private final NoticeRepository noticeRepository;
 
     @GetMapping("/addNotice")
     public String addNoticePage(){
@@ -39,15 +37,10 @@ public class NoticeController {
 
         if (notice.getTitle() == ""){
             log.info("Notice Error");
+            bindingResult.reject("Notice Error", "제목을 입력해주세요.");
         }
 
         Notice newNotice = noticeService.addNotice(notice.getTitle(), notice.getDescription());
-
-        noticeRepository.save(newNotice);
-
-        List<Notice> notices = noticeRepository.findAll();
-        log.info("notices ={}",notices);
-        redirectAttributes.addFlashAttribute("notices",notices);
 
         return "redirect:/";
     }

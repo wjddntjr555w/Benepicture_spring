@@ -1,7 +1,7 @@
 package dayonglee.benepicture.repository;
 
 
-import dayonglee.benepicture.domain.ad.Ad;
+import dayonglee.benepicture.model.Ad;
 
 import java.util.List;
 

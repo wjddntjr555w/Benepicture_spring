@@ -1,6 +1,6 @@
 package dayonglee.benepicture.repository;
 
-import dayonglee.benepicture.domain.user.User;
+import dayonglee.benepicture.model.User;
 
 public interface UserRepositoryInterface {
 

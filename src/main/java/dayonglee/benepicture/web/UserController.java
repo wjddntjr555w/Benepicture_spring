@@ -2,11 +2,11 @@ package dayonglee.benepicture.web;
 
 
 import dayonglee.benepicture.SessionConst;
-import dayonglee.benepicture.domain.ad.Ad;
+import dayonglee.benepicture.model.Ad;
 import dayonglee.benepicture.domain.ad.AdRepository;
 import dayonglee.benepicture.domain.notice.NoticeRepository;
-import dayonglee.benepicture.domain.user.User;
 import dayonglee.benepicture.domain.user.UserRepository;
+import dayonglee.benepicture.model.User;
 import dayonglee.benepicture.service.LoginService;
 import dayonglee.benepicture.service.MyBatisLoginService;
 import lombok.RequiredArgsConstructor;
@@ -48,8 +48,8 @@ public class UserController {
 
         log.info("user ={}",user);
 
-//        User loginUser = loginService.login(user.getUserId(), user.getUserPassword());
-        dayonglee.benepicture.model.User loginUser = myBatisLoginService.login(user.getUserId(),user.getUserPassword());
+        User loginUser = loginService.login(user.getUserId(), user.getUserPassword());
+//        User loginUser = myBatisLoginService.login(user.getUserId(),user.getUserPassword());
 
         if (loginUser == null){
             bindingResult.reject("loginFail","아이디 또는 비밀번호가 맞지 않습니다.");

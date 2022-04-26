@@ -1,8 +1,7 @@
 package dayonglee.benepicture.service;
 
-
-import dayonglee.benepicture.domain.user.User;
 import dayonglee.benepicture.domain.user.UserRepository;
+import dayonglee.benepicture.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

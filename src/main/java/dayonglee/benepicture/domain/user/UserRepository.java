@@ -1,5 +1,6 @@
 package dayonglee.benepicture.domain.user;
 
+import dayonglee.benepicture.model.User;
 import dayonglee.benepicture.repository.UserRepositoryInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;

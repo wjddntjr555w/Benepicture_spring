@@ -1,19 +1,21 @@
 package dayonglee.benepicture.service;
 
 import dayonglee.benepicture.model.Notice;
-import dayonglee.benepicture.domain.notice.NoticeRepository;
-import lombok.RequiredArgsConstructor;
+import dayonglee.benepicture.repository.NoticeMapper;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.Random;
 
+@Slf4j
 @Service
-@RequiredArgsConstructor
-public class NoticeService {
+public class MyBatisNoticeService {
 
-    private final NoticeRepository noticeRepository;
+    @Autowired
+    NoticeMapper noticeMapper;
 
     @Transactional
     public Notice addNotice(String title, String description){
@@ -30,9 +32,6 @@ public class NoticeService {
         Date now = new Date();
         newNotice.setCreatedAt(now);
 
-        noticeRepository.save(newNotice);
-
         return newNotice;
     }
-
 }

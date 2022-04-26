@@ -1,7 +1,7 @@
 package dayonglee.benepicture.service;
 
 
-import dayonglee.benepicture.domain.ad.Ad;
+import dayonglee.benepicture.model.Ad;
 import dayonglee.benepicture.domain.ad.AdRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

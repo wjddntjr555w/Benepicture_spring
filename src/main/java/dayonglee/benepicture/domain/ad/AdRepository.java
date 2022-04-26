@@ -1,12 +1,11 @@
 package dayonglee.benepicture.domain.ad;
 
-import dayonglee.benepicture.domain.notice.Notice;
+import dayonglee.benepicture.model.Ad;
 import dayonglee.benepicture.repository.AdRepositoryInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 import java.util.List;

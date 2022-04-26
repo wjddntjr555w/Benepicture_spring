@@ -1,4 +1,4 @@
-package dayonglee.benepicture.domain.ad;
+package dayonglee.benepicture.model;
 
 
 import lombok.Getter;

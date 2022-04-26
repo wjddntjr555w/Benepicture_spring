@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@MapperScan(basePackageClasses = BenepictureApplication.class)
+//@MapperScan(basePackageClasses = BenepictureApplication.class)
 @SpringBootApplication
 public class BenepictureApplication {
 

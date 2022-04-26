@@ -1,4 +1,4 @@
-package dayonglee.benepicture.dao;
+package dayonglee.benepicture.repository;
 
 import dayonglee.benepicture.model.User;
 import org.apache.ibatis.annotations.Mapper;

@@ -1,6 +1,6 @@
 package dayonglee.benepicture.repository;
 
-import dayonglee.benepicture.domain.notice.Notice;
+import dayonglee.benepicture.model.Notice;
 
 import java.util.List;
 
