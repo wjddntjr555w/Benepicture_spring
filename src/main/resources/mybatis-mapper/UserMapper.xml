@@ -12,6 +12,11 @@
         WHERE user_id = #{userId} and user_password = #{userPassword}
     </select>
 
+    <update id="save">
+
+        INSERT INTO user(user_id, user_password) values (#{userId}, #{userPassword})
+
+    </update>
 </mapper>
 
 

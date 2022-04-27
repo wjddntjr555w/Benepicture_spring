@@ -25,4 +25,13 @@ public class MyBatisLoginService {
         return loginUser;
 
     }
+
+    @Transactional
+    public User save(User user){
+
+        userMapper.save(user);
+
+        log.info("saved user = {}",user);
+        return user;
+    };
 }

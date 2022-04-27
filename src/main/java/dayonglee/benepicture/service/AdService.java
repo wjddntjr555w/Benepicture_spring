@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -18,5 +20,10 @@ public class AdService {
     @Transactional
     public Ad save(Ad ad){
         return adRepository.save(ad);
+    }
+
+    @Transactional
+    public List<Ad> findAll(){
+        return adRepository.findAll();
     }
 }

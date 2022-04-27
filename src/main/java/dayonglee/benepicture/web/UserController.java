@@ -7,8 +7,10 @@ import dayonglee.benepicture.domain.ad.AdRepository;
 import dayonglee.benepicture.domain.notice.NoticeRepository;
 import dayonglee.benepicture.domain.user.UserRepository;
 import dayonglee.benepicture.model.User;
+import dayonglee.benepicture.service.AdService;
 import dayonglee.benepicture.service.LoginService;
 import dayonglee.benepicture.service.MyBatisLoginService;
+import dayonglee.benepicture.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -29,13 +31,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserRepository userRepository;
-    private final LoginService loginService;
+    private final AdService adService;
+    private final NoticeService noticeService;
 
     private final MyBatisLoginService myBatisLoginService;
-
-    private final NoticeRepository noticeRepository;
-    private final AdRepository adRepository;
 
     @GetMapping("/login")
     public String loginPage(@ModelAttribute User user){
@@ -48,8 +47,8 @@ public class UserController {
 
         log.info("user ={}",user);
 
-        User loginUser = loginService.login(user.getUserId(), user.getUserPassword());
-//        User loginUser = myBatisLoginService.login(user.getUserId(),user.getUserPassword());
+//        User loginUser = loginService.login(user.getUserId(), user.getUserPassword());
+        User loginUser = myBatisLoginService.login(user.getUserId(),user.getUserPassword());
 
         if (loginUser == null){
             bindingResult.reject("loginFail","아이디 또는 비밀번호가 맞지 않습니다.");
@@ -74,9 +73,7 @@ public class UserController {
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute User user){
 
-        userRepository.save(user);
-
-        log.info("saved user = {}",userRepository.findById(user.getUserId()));
+        myBatisLoginService.save(user);
 
         return "redirect:/user/login";
     }
@@ -84,9 +81,9 @@ public class UserController {
     @GetMapping("/adminHome")
     public String adminHome(Model model) {
 
-        model.addAttribute("notices",noticeRepository.findAll());
+        model.addAttribute("notices",noticeService.findAll());
 
-        List<Ad> adList = adRepository.findAll();
+        List<Ad> adList = adService.findAll();
         model.addAttribute("ads",adList);
 
 
