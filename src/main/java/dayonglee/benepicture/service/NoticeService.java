@@ -2,6 +2,7 @@ package dayonglee.benepicture.service;
 
 import dayonglee.benepicture.model.Notice;
 import dayonglee.benepicture.domain.notice.NoticeRepository;
+import dayonglee.benepicture.repository.NoticeMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +15,8 @@ import java.util.Random;
 public class NoticeService {
 
     private final NoticeRepository noticeRepository;
+    private final NoticeMapper noticeMapper;
+
 
     @Transactional
     public Notice addNotice(String title, String description){
@@ -30,7 +33,9 @@ public class NoticeService {
         Date now = new Date();
         newNotice.setCreatedAt(now);
 
-        noticeRepository.save(newNotice);
+//        noticeRepository.save(newNotice);
+        noticeMapper.save(newNotice);
+
 
         return newNotice;
     }

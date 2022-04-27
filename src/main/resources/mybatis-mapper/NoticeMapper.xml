@@ -9,7 +9,7 @@
 
         insert into
         notice(notice_id, title, description, createdat)
-        values(#{noticeId},#{title},#{description},#{createdat})
+        values(#{noticeId},#{title},#{description},#{createdAt})
 
     </update>
 

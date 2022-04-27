@@ -9,7 +9,7 @@ public interface NoticeMapper {
 
     // save, findAll
 
-    Notice save(Notice notice);
+    void save(Notice notice);
 
     Notice findAll();
 }
