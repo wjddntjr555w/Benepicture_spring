@@ -2,7 +2,6 @@ package dayonglee.benepicture.web;
 
 
 import dayonglee.benepicture.model.Notice;
-import dayonglee.benepicture.domain.notice.NoticeRepository;
 import dayonglee.benepicture.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,8 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.util.List;
 
 
 @Slf4j

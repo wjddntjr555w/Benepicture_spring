@@ -1,4 +1,4 @@
-package dayonglee.benepicture.domain.user;
+package dayonglee.benepicture.domain;
 
 import dayonglee.benepicture.model.User;
 import dayonglee.benepicture.repository.UserRepositoryInterface;

@@ -1,7 +1,7 @@
 package dayonglee.benepicture.service;
 
 import dayonglee.benepicture.model.Notice;
-import dayonglee.benepicture.domain.notice.NoticeRepository;
+import dayonglee.benepicture.domain.NoticeRepository;
 import dayonglee.benepicture.repository.NoticeMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package dayonglee.benepicture.domain.notice;
+package dayonglee.benepicture.domain;
 
 import dayonglee.benepicture.model.Notice;
 import dayonglee.benepicture.repository.NoticeRepositoryInterface;

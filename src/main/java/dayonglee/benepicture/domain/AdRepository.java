@@ -1,4 +1,4 @@
-package dayonglee.benepicture.domain.ad;
+package dayonglee.benepicture.domain;
 
 import dayonglee.benepicture.model.Ad;
 import dayonglee.benepicture.repository.AdRepositoryInterface;

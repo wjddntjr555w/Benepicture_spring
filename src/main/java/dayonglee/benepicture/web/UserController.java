@@ -3,12 +3,8 @@ package dayonglee.benepicture.web;
 
 import dayonglee.benepicture.SessionConst;
 import dayonglee.benepicture.model.Ad;
-import dayonglee.benepicture.domain.ad.AdRepository;
-import dayonglee.benepicture.domain.notice.NoticeRepository;
-import dayonglee.benepicture.domain.user.UserRepository;
 import dayonglee.benepicture.model.User;
 import dayonglee.benepicture.service.AdService;
-import dayonglee.benepicture.service.LoginService;
 import dayonglee.benepicture.service.MyBatisLoginService;
 import dayonglee.benepicture.service.NoticeService;
 import lombok.RequiredArgsConstructor;

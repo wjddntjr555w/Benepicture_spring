@@ -2,7 +2,7 @@ package dayonglee.benepicture.service;
 
 
 import dayonglee.benepicture.model.Ad;
-import dayonglee.benepicture.domain.ad.AdRepository;
+import dayonglee.benepicture.domain.AdRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

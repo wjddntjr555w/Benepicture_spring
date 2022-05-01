@@ -1,7 +1,7 @@
 package dayonglee.benepicture.web;
 
 
-import dayonglee.benepicture.domain.notice.NoticeRepository;
+import dayonglee.benepicture.domain.NoticeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
